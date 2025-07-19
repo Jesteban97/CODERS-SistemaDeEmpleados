@@ -88,7 +88,7 @@ export async function POST(req: NextRequest) {
     }
 
     const nuevasHoras = empleado.horas_trabajadas - BigInt(horas_pagadas);
-
+//@ts-ignore
 const pago = await prisma.$transaction(async (tx) => {
   await tx.empleado.update({
     where: { id: empleado_id },

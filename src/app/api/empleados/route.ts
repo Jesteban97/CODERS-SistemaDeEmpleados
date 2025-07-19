@@ -16,6 +16,7 @@ export async function GET(req: NextRequest) {
     })
 
     // Convertimos los campos BigInt
+    //@ts-ignore
     const empleadosSerializados = empleados.map((empleado) => ({
       ...empleado,
       salario: empleado.salario?.toString() ?? null,
